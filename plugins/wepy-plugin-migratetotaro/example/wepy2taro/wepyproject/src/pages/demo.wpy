@@ -1,0 +1,44 @@
+<template>
+  <view>
+    <view @tap="jump">pages/index</view>
+    <image src="./img_1.png"></image>
+    <navigator url="/pages/index">navigate to pages/index</navigator>
+    <demo compid="demo"></demo>
+    <compDemo></compDemo>
+  </view>
+</template>
+
+<script>
+import wepy from 'wepy';
+import compDemo from '../components/demo';
+
+export default class Index extends wepy.page {
+  config = {
+    usingComponents: {
+      'demo': '/components/demo/index' // 组件使用 taro 组件
+    }
+  }
+  components = {
+    compDemo
+  }
+  onLoad() {
+    taro.propsManager.set(
+      {
+        text: 'using taro component in wepy page demo prop text'
+      },
+      'demo'
+    )
+  }
+  methods = {
+    jump() {
+      wepy.navigateTo({
+        url: '/pages/index'
+      });
+    }
+  };
+}
+</script>
+
+<style scoped>
+</style>
+

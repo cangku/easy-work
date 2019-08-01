@@ -1,0 +1,27 @@
+{
+  "name": "wepy-plugin-migrate2taro",
+  "version": "1.0.1",
+  "description": "迁移Wepy项目到Taro项目",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "babel src -d lib",
+    "version": "babel --version"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cangku/wepy-plugin-migratetotaro.git"
+  },
+  "keywords": [
+    "wepy",
+    "taro"
+  ],
+  "author": "unofficial",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/preset-env": "^7.4.5"
+  }
+}

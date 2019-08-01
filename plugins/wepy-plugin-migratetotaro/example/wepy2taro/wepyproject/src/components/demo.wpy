@@ -1,0 +1,26 @@
+<style lang="less">
+</style>
+<template>
+  <view>
+    <demo compid="demo2"></demo>
+  </view>
+</template>
+<script>
+import wepy from 'wepy';
+
+export default class Counter extends wepy.component {
+  config = {
+    usingComponents: {
+      demo: '/components/demo/index'
+    }
+  };
+  onLoad() {
+    taro.propsManager.set(
+      {
+        text: 'using taro component in wepy component demo prop text'
+      },
+      'demo2'
+    );
+  }
+}
+</script>
