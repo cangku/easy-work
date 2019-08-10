@@ -1,4 +1,4 @@
-> echarts12 名字本来是测试一下使用的，结果忘记 `unpublish` 了。目前可以正常使用。
+> 这是一个不需要额外配置，安装即可以使用的 Taro Echarts 组件。echarts12 名字本来是测试一下使用的，结果忘记 `unpublish` 了。目前可以正常使用。
 
 ### 图表组件
 
@@ -17,6 +17,28 @@
     <Echart option={ option } />
 ```
 
+### 参数解释
+
+| 属性名 | 说明                                                               | 必选 |
+| ------ | ------------------------------------------------------------------ | ---- |
+| option | 同 echarts 的 [option](https://www.echartsjs.com/option.html) 配置 | 是   |
+| onInit | 初始化回调函数，参数为 chart ，可以通过 chart 做事件绑定等操作     | 否   |
+| style  | 自定义样式，例如可以修改默认 200 的 height                         | 否   |
+
+### 其它
+
+wepy 中如何使用？
+
+```
+
+```
+
+原生小程序 中如何使用？
+
+```
+
+```
+
 ### 压缩 echarts.js（可选）
 
 > taro/config/index.js
@@ -32,14 +54,6 @@
         options: {}
     }
 ```
-
-### 参数解释
-
-| 属性名 | 说明                                                               | 必选 |
-| ------ | ------------------------------------------------------------------ | ---- |
-| option | 同 echarts 的 [option](https://www.echartsjs.com/option.html) 配置 | 是   |
-| onInit | 初始化回调函数，参数为 chart ，可以通过 chart 做事件绑定等操作     | 否   |
-| style  | 自定义样式，例如可以修改默认 200 的 height                         | 否   |
 
 ### 支持情况
 

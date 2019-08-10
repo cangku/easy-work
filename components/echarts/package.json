@@ -5,6 +5,8 @@
     "main": "dist/index.js",
     "main:h5": "dist/h5/index.js",
     "scripts": {
+        "dev:weapp": "npm run build:weapp -- --watch",
+        "build:weapp": "taro build --type weapp",
         "build:component": "cross-env TARO_BUILD_TYPE=component taro build --ui"
     },
     "repository": {

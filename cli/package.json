@@ -1,0 +1,19 @@
+{
+  "name": "@unofficial/cli",
+  "version": "0.0.1",
+  "description": "",
+  "bin": {
+    "un": "bin/unofficial"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "un"
+  },
+  "keywords": [],
+  "author": "unofficial<cangku@unofficial.cn>",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "commander": "^2.20.0"
+  }
+}
