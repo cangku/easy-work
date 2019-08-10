@@ -1,0 +1,19 @@
+{
+  "name": "@unofficial/websocket",
+  "version": "0.0.1",
+  "description": "websocket heartbeat",
+  "main": "lib/websocket.js",
+  "scripts": {
+    "build": "babel src -d lib"
+  },
+  "keywords": [
+    "websocket"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5"
+  }
+}
