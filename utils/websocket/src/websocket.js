@@ -60,6 +60,7 @@ export default class WebSocketHeartbeat {
         }
 
         if (+new Date() - this.lastConnectTime < this.pongOutTime) {
+            this.onconnect();
             this.reconnectTimeId && clearTimeout(this.reconnectTimeId);
             this.reconnectTimeId = setTimeout(() => {
                 this.connect();
