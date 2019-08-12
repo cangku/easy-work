@@ -126,7 +126,7 @@ export default class WebSocketHeartbeat {
             this.pongOutTimeId = setTimeout(() => {
                 this.heartReset();
                 this.close();
-            });
+            }, this.pongOutTime);
         }, this.pingTime);
     }
 
