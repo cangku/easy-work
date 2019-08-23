@@ -15,8 +15,7 @@ import { View } from "@tarojs/components";
 import * as echarts from "./echarts";
 import EcCanvas from "./ec-canvas";
 import "./index.styl";
-
-export default class Echart extends Component {
+class Echart extends Component {
     state = {
         ec: {
             lazyLoad: true,
@@ -70,8 +69,8 @@ export default class Echart extends Component {
     }
     render() {
         const { ec } = this.state;
-        return {
-            weapp: (
+        if (process.env.TARO_ENV === "weapp") {
+            return (
                 <View style={`${this.props.style || "height: 200px"}`}>
                     <EcCanvas
                         ref={ecComp => {
@@ -82,8 +81,9 @@ export default class Echart extends Component {
                         echarts={echarts}
                     />
                 </View>
-            ),
-            h5: (
+            );
+        } else if (process.env.TARO_ENV === "h5") {
+            return (
                 <View
                     style={`${this.props.style || "height: 200px"}`}
                     ref={ec => {
@@ -91,7 +91,13 @@ export default class Echart extends Component {
                     }}
                     id="mychart-area"
                 />
-            )
-        }[process.env.TARO_ENV];
+            );
+        }
+        return <View></View>;
     }
 }
+
+export default {
+    Echart,
+    echarts
+};
