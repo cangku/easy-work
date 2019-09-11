@@ -3,17 +3,30 @@
   "version": "0.0.1",
   "description": "",
   "bin": {
-    "un": "bin/unofficial"
+    "pi": "bin/unofficial.js"
   },
   "main": "index.js",
   "scripts": {
-    "test": "un"
+    "test": "pi babel src/a.js -o dist/b.js"
   },
   "keywords": [],
   "author": "unofficial<cangku@unofficial.cn>",
   "license": "MIT",
-  "dependencies": {},
   "devDependencies": {
-    "commander": "^2.20.0"
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-transform-arrow-functions": "^7.2.0",
+    "@babel/plugin-transform-classes": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^3.0.0",
+    "commander": "^2.20.0",
+    "html-webpack-plugin": "^3.2.0",
+    "inquirer": "^7.0.0",
+    "webpack": "^4.39.3",
+    "webpack-dev-server": "^3.8.0"
+  },
+  "dependencies": {},
+  "engines": {
+    "node": ">=8.9"
   }
 }

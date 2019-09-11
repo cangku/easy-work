@@ -9,11 +9,12 @@
   "keywords": [
     "websocket"
   ],
-  "author": "",
+  "author": "unofficial <cangku@unofficial.cn>",
   "license": "MIT",
   "devDependencies": {
     "@babel/cli": "^7.5.5",
     "@babel/core": "^7.5.5",
-    "@babel/plugin-proposal-class-properties": "^7.5.5"
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/preset-env": "^7.5.5"
   }
 }

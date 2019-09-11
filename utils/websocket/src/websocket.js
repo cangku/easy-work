@@ -60,13 +60,13 @@ export default class WebSocketHeartbeat {
         }
 
         if (+new Date() - this.lastConnectTime < this.pongOutTime) {
-            this.onconnect();
             this.reconnectTimeId && clearTimeout(this.reconnectTimeId);
             this.reconnectTimeId = setTimeout(() => {
                 this.connect();
             }, 5000);
             return;
         }
+        this.lastConnectTime && this.onconnect();
         this.lastConnectTime = +new Date();
         this.ws = new WebSocket(this.baseUrl);
         this.registerEvent();
@@ -136,7 +136,7 @@ export default class WebSocketHeartbeat {
     }
 }
 
-export function initWs({ url, pingTime }) {
+export const initWs = ({ url, pingTime }) => {
     const ws = new WebSocketHeartbeat({ url, pingTime });
     return ws;
-}
+};
