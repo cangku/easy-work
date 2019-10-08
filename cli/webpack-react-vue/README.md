@@ -8,4 +8,10 @@
 yarn add webpack webpack-cli -D
 ```
 
-### config
+## compiler
+
+### babel
+
+```
+yarn add @babel/core @babel/preset-env babel-loader -D
+```

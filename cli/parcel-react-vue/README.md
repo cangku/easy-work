@@ -7,3 +7,11 @@
 ```
 yarn add parcel-bundler -D
 ```
+
+## compiler
+
+### babel
+
+```
+yarn add @babel/core @babel/preset-env -D
+```

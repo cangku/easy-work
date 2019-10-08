@@ -13,6 +13,8 @@
     "start-js": "parcel build src/index.js"
   },
   "devDependencies": {
+    "@babel/core": "^7.6.2",
+    "@babel/preset-env": "^7.6.2",
     "parcel-bundler": "^1.12.3"
   }
 }
