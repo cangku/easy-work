@@ -39,3 +39,7 @@ yarn add typescript ts-loader -D
   "include": ["./src/**/*"]
 }
 ```
+
+## Main Library
+
+### React
