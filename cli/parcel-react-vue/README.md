@@ -15,3 +15,27 @@ yarn add parcel-bundler -D
 ```
 yarn add @babel/core @babel/preset-env -D
 ```
+
+### typescript
+
+```
+yarn add typescript -D
+```
+
+```javascript
+// tsconfig.json
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "strict": true,
+    "noImplicitReturns": true,
+    "noImplicitAny": true,
+    "module": "es6",
+    "moduleResolution": "node",
+    "target": "es5",
+    "allowJs": true
+  },
+  "include": ["./src/**/*"]
+}
+```

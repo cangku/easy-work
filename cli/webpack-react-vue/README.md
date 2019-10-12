@@ -15,3 +15,27 @@ yarn add webpack webpack-cli -D
 ```
 yarn add @babel/core @babel/preset-env babel-loader -D
 ```
+
+### typescript
+
+```
+yarn add typescript ts-loader -D
+```
+
+```javascript
+// tsconfig.json
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "strict": true,
+    "noImplicitReturns": true,
+    "noImplicitAny": true,
+    "module": "es6",
+    "moduleResolution": "node",
+    "target": "es5",
+    "allowJs": true
+  },
+  "include": ["./src/**/*"]
+}
+```
