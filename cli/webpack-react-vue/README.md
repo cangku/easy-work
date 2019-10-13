@@ -43,3 +43,8 @@ yarn add typescript ts-loader -D
 ## Main Library
 
 ### React
+
+```
+yarn add react react-dom
+yarn add @types/react @types/react-dom @babel/preset-react -D
+```

@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 const config = {
     entry: './src/index', // config resolve extension => ignore .(j|t)sx?
@@ -10,14 +11,21 @@ const config = {
     module: {
         rules: [
             {
-                test: /\.(js|jsx)$/,
-                use: 'babel-loader',
-                exclude: /node_modules/
+                test: /\.vue$/,
+                use: 'vue-loader'
             },
             {
-                test: /\.(ts|tsx)?$/,
-                use: 'ts-loader',
-                exclude: /node_modules/
+                test: /\.jsx?$/,
+                use: 'babel-loader'
+            },
+            {
+                test: /\.tsx?$/,
+                use: {
+                    loader: 'ts-loader',
+                    options: {
+                        appendTsSuffixTo: [/\.vue$/]
+                    }
+                }
             }
         ]
     },
@@ -26,9 +34,13 @@ const config = {
             '.tsx',
             '.ts',
             '.jsx',
-            '.js'
+            '.js',
+            '.vue'
         ]
-    }
+    },
+    plugins: [
+        new VueLoaderPlugin()
+    ]
 }
 
 module.exports = config;

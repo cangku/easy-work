@@ -17,11 +17,15 @@
     "@babel/preset-env": "^7.6.2",
     "@types/react": "^16.9.5",
     "@types/react-dom": "^16.9.1",
+    "@vue/component-compiler-utils": "^3.0.0",
     "parcel-bundler": "^1.12.3",
-    "typescript": "^3.6.3"
+    "typescript": "^3.6.3",
+    "vue-template-compiler": "^2.6.10"
   },
   "dependencies": {
     "react": "^16.10.2",
-    "react-dom": "^16.10.2"
+    "react-dom": "^16.10.2",
+    "vue": "^2.6.10",
+    "vue-hot-reload-api": "^2.3.4"
   }
 }

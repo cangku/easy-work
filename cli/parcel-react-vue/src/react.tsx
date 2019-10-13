@@ -11,5 +11,5 @@ class App extends React.Component<Props> {
     }
 }
 
-var mountNode = document.getElementById('app');
+var mountNode = document.getElementById('app-react');
 ReactDOM.render(<App name="unofficial" />, mountNode);

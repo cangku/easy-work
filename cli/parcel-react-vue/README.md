@@ -39,3 +39,12 @@ yarn add typescript -D
   "include": ["./src/**/*"]
 }
 ```
+
+## Main Library
+
+### React
+
+```
+yarn add react react-dom
+yarn add @types/react @types/react-dom -D
+```
