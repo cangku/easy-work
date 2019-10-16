@@ -19,11 +19,12 @@
 
 ### 参数解释
 
-| 属性名 | 说明                                                               | 必选 |
-| ------ | ------------------------------------------------------------------ | ---- |
-| option | 同 echarts 的 [option](https://www.echartsjs.com/option.html) 配置 | 是   |
-| onInit | 初始化回调函数，参数为 chart ，可以通过 chart 做事件绑定等操作     | 否   |
-| style  | 自定义样式，例如可以修改默认 200 的 height                         | 否   |
+| 属性名 | 说明                                                                       | 必选 |
+| ------ | -------------------------------------------------------------------------- | ---- |
+| option | 同 echarts 的 [option](https://www.echartsjs.com/option.html) 配置         | 是   |
+| ec     | 控制是否延迟加载以及事件禁止，默认 { lazyLoad: false, disableTouch: true } | 否   |
+| onInit | 初始化回调函数，参数为 chart ，可以通过 chart 做事件绑定等操作             | 否   |
+| style  | 自定义样式，例如可以修改默认 200 的 height                                 | 否   |
 
 ### 其它
 

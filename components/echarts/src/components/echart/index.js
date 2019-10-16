@@ -17,9 +17,9 @@ import EcCanvas from "./ec-canvas";
 import "./index.styl";
 class Echart extends Component {
     state = {
-        ec: {
-            lazyLoad: true,
-            disableTouch: false
+        defaultEc: {
+            lazyLoad: false,
+            disableTouch: true
         }
     };
 
@@ -52,7 +52,8 @@ class Echart extends Component {
         }
     }
     componentDidMount() {
-        const { lazyLoad = false } = this.props;
+        const { lazyLoad = false, disableTouch = true } = this.props.ec || {};
+        this.setState({ defaultEc: { lazyLoad, disableTouch } });
         !lazyLoad && this.initChart();
     }
     componentDidUpdate(prevProps) {
@@ -68,7 +69,7 @@ class Echart extends Component {
         }
     }
     render() {
-        const { ec } = this.state;
+        const { defaultEc: ec } = this.state;
         if (process.env.TARO_ENV === "weapp") {
             return (
                 <View style={`${this.props.style || "height: 200px"}`}>

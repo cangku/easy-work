@@ -25,8 +25,8 @@ export default class EcCanvas extends Component {
         if (!isValid) {
             console.error(
                 "微信基础库版本过低，需大于等于 1.9.91。" +
-                    "参见：https://github.com/ecomfe/echarts-for-weixin" +
-                    "#%E5%BE%AE%E4%BF%A1%E7%89%88%E6%9C%AC%E8%A6%81%E6%B1%82"
+                "参见：https://github.com/ecomfe/echarts-for-weixin" +
+                "#%E5%BE%AE%E4%BF%A1%E7%89%88%E6%9C%AC%E8%A6%81%E6%B1%82"
             );
             return;
         }
@@ -45,35 +45,10 @@ export default class EcCanvas extends Component {
             .boundingClientRect(res => {
                 if (typeof callback === "function") {
                     this.chart = callback(canvas, res.width, res.height);
-                } else if (
-                    this.data.ec &&
-                    typeof this.data.ec.onInit === "function"
-                ) {
-                    this.chart = this.data.ec.onInit(
-                        canvas,
-                        res.width,
-                        res.height
-                    );
-                } else {
-                    this.triggerEvent("init", {
-                        canvas: canvas,
-                        width: res.width,
-                        height: res.height
-                    });
                 }
             })
             .exec();
     };
-
-    canvasToTempFilePath(opt) {
-        if (!opt.canvasId) {
-            opt.canvasId = this.data.canvasId;
-        }
-
-        ctx.draw(true, () => {
-            Taro.canvasToTempFilePath(opt, this);
-        });
-    }
 
     onTouchStart(e) {
         if (this.chart && e.touches.length > 0) {
@@ -126,17 +101,26 @@ export default class EcCanvas extends Component {
     render() {
         const { ec = {}, canvasId } = this.props;
         return (
-            <Canvas
-                class="ec-canvas"
-                canvas-id={canvasId}
-                init={this.init}
-                onTouchstart={ec.disableTouch ? "" : this.onTouchStart}
-                onTouchmove={ec.disableTouch ? "" : this.onTouchMove}
-                onTouchend={ec.disableTouch ? "" : this.onTouchEnd}
-                ref={ecComp => {
-                    this.ecComp = ecComp;
-                }}
-            />
+            ec.disableTouch ?
+                <Canvas
+                    class="ec-canvas"
+                    canvas-id={canvasId}
+                    init={this.init}
+                    ref={ecComp => {
+                        this.ecComp = ecComp;
+                    }}
+                /> :
+                <Canvas
+                    class="ec-canvas"
+                    canvas-id={canvasId}
+                    init={this.init}
+                    onTouchstart={this.onTouchStart}
+                    onTouchmove={this.onTouchMove}
+                    onTouchend={this.onTouchEnd}
+                    ref={ecComp => {
+                        this.ecComp = ecComp;
+                    }}
+                />
         );
     }
 }
