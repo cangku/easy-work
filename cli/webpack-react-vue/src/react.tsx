@@ -1,5 +1,8 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+// 创建一个 global.d.ts
+// declare module '*.css';
+import style from './react.css';
 
 interface Props {
     name: string;
@@ -7,7 +10,8 @@ interface Props {
 
 class App extends React.Component<Props> {
     render() {
-        return <div>Hello {this.props.name}</div>;
+        console.log(style);
+        return <div className="name">Hello {this.props.name}</div>;
     }
 }
 

@@ -1,5 +1,5 @@
 <template>
-    <div>{{name}}</div>
+    <div class="name">{{name}}</div>
 </template>
 
 <script lang="ts">
@@ -13,3 +13,12 @@ export default Vue.extend({
     }
 });
 </script>
+
+<style scoped>
+body {
+    background: #f00;
+}
+.name {
+    color: #fff;
+}
+</style>
