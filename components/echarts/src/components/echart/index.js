@@ -98,7 +98,4 @@ class Echart extends Component {
     }
 }
 
-export default {
-    Echart,
-    echarts
-};
+export { Echart, echarts };
