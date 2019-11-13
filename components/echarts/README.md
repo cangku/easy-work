@@ -13,7 +13,11 @@
 ### 使用方法
 
 ```
+    // 方式一
+    import Echart from 'echarts12'
+    // 方式二
     import { Echart } from 'echarts12'
+
     <Echart option={ option } />
 ```
 
