@@ -20,7 +20,8 @@ class Echart extends Component {
         defaultEc: {
             lazyLoad: false,
             disableTouch: true
-        }
+        },
+        prevOption: {}
     };
 
     initChart() {
@@ -56,8 +57,9 @@ class Echart extends Component {
         this.setState({ defaultEc: { lazyLoad, disableTouch } });
         !lazyLoad && this.initChart();
     }
-    componentDidUpdate(prevProps) {
-        if (this.props.option !== prevProps.option) {
+    componentWillReceiveProps(nextProps) {
+        const { prevOption } = this.state;
+        if (prevOption !== nextProps.option) {
             if (this.chart) {
                 try {
                     this.chart.dispose();
@@ -65,6 +67,9 @@ class Echart extends Component {
                     console.error("[Custom Error] dispose hide error.");
                 }
             }
+            this.setState({
+                prevOption: Object.assign({}, nextProps.option)
+            })
             this.initChart();
         }
     }

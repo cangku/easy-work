@@ -103,7 +103,6 @@ export default class EcCanvas extends Component {
         return (
             ec.disableTouch ?
                 <Canvas
-                    type="2d"
                     class="ec-canvas"
                     canvas-id={canvasId}
                     init={this.init}
@@ -112,7 +111,6 @@ export default class EcCanvas extends Component {
                     }}
                 /> :
                 <Canvas
-                    type="2d"
                     class="ec-canvas"
                     canvas-id={canvasId}
                     init={this.init}
