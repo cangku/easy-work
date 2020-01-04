@@ -1,0 +1,17 @@
+{
+  "name": "vuepress-theme-pi",
+  "version": "0.0.1",
+  "description": "vuepress theme",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [
+    "vuepress",
+    "theme"
+  ],
+  "author": "unofficial <cangku@unofficial.cn>",
+  "license": "MIT",
+  "devDependencies": {
+    "less": "^3.9.0",
+    "less-loader": "^5.0.0"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "@unofficial/remove.bg",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node -V"
+  },
+  "keywords": [],
+  "author": "unofficial<cangku@unofficial.cn>",
+  "license": "MIT",
+  "devDependencies": {
+    "koa": "^2.8.1",
+    "koa-body": "^4.1.1",
+    "puppeteer-core": "^1.19.0"
+  }
+}

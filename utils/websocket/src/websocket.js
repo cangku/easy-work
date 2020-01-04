@@ -30,11 +30,11 @@ export default class WebSocketHeartbeat {
     /**
      * override hook function
      */
-    onclose() {}
-    onconnect() {} // custom
-    onerror() {}
-    onmessage() {}
-    onopen() {}
+    onclose() { }
+    onconnect() { } // custom
+    onerror() { }
+    onmessage() { }
+    onopen() { }
 
     /**
      * hook function
@@ -87,7 +87,7 @@ export default class WebSocketHeartbeat {
             this.heartReset();
             this.onerror(e);
             // reconnect
-            this.connect();
+            // this.connect();
         };
 
         /**

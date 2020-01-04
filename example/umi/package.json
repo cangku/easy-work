@@ -1,0 +1,15 @@
+{
+  "name": "@unofficial/umi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "umi dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "umi": "^2.8.20"
+  }
+}

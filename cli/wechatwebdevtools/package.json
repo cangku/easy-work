@@ -1,0 +1,11 @@
+{
+  "name": "wechatwebdevtools",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "shelljs": "^0.8.3",
+    "userhome": "^1.0.0",
+    "which": "^2.0.2"
+  }
+}

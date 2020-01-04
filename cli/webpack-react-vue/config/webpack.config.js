@@ -10,6 +10,7 @@ const defaultConfig = {
         path: path.resolve(__dirname, '..', 'dist'),
         filename: 'bundle.js'
     },
+    mode: 'development',
     // modules => submodule config
     resolve: {
         extensions: [

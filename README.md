@@ -9,3 +9,5 @@
 👣 [components/echarts](components/echarts) Taro echarts 图表组件（小程序 / H5）
 
 👣 [utils/websocket](utils/websocket) websocket 心跳检测重连
+👣 [utils/debounce](utils/debounce)
+👣 [utils/throttle](utils/throttle)

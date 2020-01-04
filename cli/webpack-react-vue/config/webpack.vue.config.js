@@ -12,9 +12,28 @@ webpackTypescriptConfig.use.options = {
     appendTsSuffixTo: [/\.vue$/]
 }
 
+// utils function
+
+/**
+ *
+ * @param {*} data 需要验证的数据
+ * @param { } type 需要验证数据的类型是不是指定类
+ *
+ * @return boolean/string
+ */
+function validateType(data, type) {
+    if (type) {
+        return new RegExp(type, 'i').test(Object.prototype.toString.call(data));
+    } else {
+        return Object.prototype.toString.call(NaN).match(/(?<=\s)\w+(?=])/);
+    }
+}
+
 // vue css config
-// *** 如果先引入 React config，webpackCssConfig.use 可能是数组
-webpackCssConfig.use = ['vue-style-loader'].concat(webpackCssConfig.use);
+const localWebpackCssConfig = webpackCssConfig.map(({ ...config }) => {
+    config.use = ['vue-style-loader'].concat(config.use);
+    return config;
+})
 
 const config = {
     module: {
@@ -25,7 +44,7 @@ const config = {
             },
             webpackBabelConfig,
             webpackTypescriptConfig,
-            webpackCssConfig
+            ...localWebpackCssConfig
         ]
     },
     plugins: [
